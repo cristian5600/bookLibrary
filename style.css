@@ -1,0 +1,111 @@
+
+html{
+    height:100%;
+    width:100%;
+}
+body{
+    height:100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.formWindow{
+    position:relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-style:double;
+    background-color:rgba(37, 39, 34, 0.5);
+
+
+    
+}
+form{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    position:relative;
+    z-index: 4;
+    height:fit-content;
+    width:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-style:double;
+    gap:40px;
+    background-color:beige;
+
+
+}
+.header{
+    width:100%;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-size: 35px;
+    background-color: bisque;
+}
+.books{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer{
+    width:100%;
+    height:50px;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book{
+    height:400px;
+    width: 300px;
+    border-style: solid;
+}
+.add{
+    height:40px;
+    width:120px;
+
+}
+.submit{
+    height:40px;
+    width:150px;
+    font-size: 30px;
+
+}
+.inputElement{
+    font-size: 50px; 
+    }
+input{
+    height:60px;
+    font-size: 50px;
+
+}
+#dissapear{
+    display: none;
+}
+.position{
+    position:absolute;
+    z-index: 1;
+    pointer-events: none;
+}

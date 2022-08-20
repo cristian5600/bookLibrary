@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="formWindow" id="dissapear">
+        <form name="getBook" id="getBook" action="" method="post">
+            <div class="inputElement">
+                <label for="book_name">Book Name:</label>
+                <input type="text" name="book_name" id="book_name" required>
+            </div>
+        
+            <div class="inputElement">
+                <label for="author_name">Author Name:</label>
+                <input type="text" name="author_name" id="author_name" required>
+            </div>
+        
+            <div class="inputElement">
+                <label for="year">Year:</label>
+                <input type="number" name="year" id="year" required>
+            </div>
+        
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div>Welcome to the Library</div>
+            <button class="add"> add book</button>
+        </div>
+        <div class="books">
+            <div class="book"></div>
+        </div>
+        <div class="footer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, minima?
+
+        </div>
+    </div>
+    
+</body>
+<script src="script.js" defer></script>
+</html>
