@@ -19,8 +19,8 @@ add[0].addEventListener(`click`, ()=>{ // this opens the form
 
 form.onsubmit = function(e){
     e.preventDefault();
-    console.log(this);
-    console.log(this.author_name.value);
+    //console.log(this);
+    //console.log(this.author_name.value);
     let book = new Book(this.book_name.value,this.author_name.value,this.year.value)
     myLibrary.push(book);
     console.log(myLibrary);
@@ -36,7 +36,6 @@ function addBookToPage(book){
     let title = document.createElement(`div`);
     newElement.appendChild(title);
     title.textContent =`Title: ` + book.title;
-    ///newElement.appendChild(`title`);
 
     let author = document.createElement(`div`);
     newElement.appendChild(author);
@@ -46,20 +45,26 @@ function addBookToPage(book){
     newElement.appendChild(year);
     year.textContent = `Year: ` + book.year;
     
-    let rmv_btn = document.createElement(`button`);
+    let rmv_btn = document.createElement(`button`);  // the remove button for each book
     rmv_btn.classList.add(`remove`)
     newElement.appendChild(rmv_btn);
     rmv_btn.textContent = `Remove`;
 
-    rmv_btn.addEventListener(`click`, (e)=>{
-        console.log(e.path[1].getAttribute(`data-index`));
+    rmv_btn.addEventListener(`click`, (e)=>{   
+       // console.log(e.path[1].getAttribute(`data-index`));
         myLibrary.splice(e.path[1].getAttribute(`data-index`),1);
         e.path[1].remove();
+        fix_index();
     })
 }
 function fix_index(){
-    let mybooks = 2;
-}
+    let mybooks = document.getElementsByClassName(`book`);
+    let i = 0;
+    for(item of mybooks){
+        item.setAttribute(`data-index`,`${i}`);
+        i++;
+    }
+}   
 
 function toogleForm(){
     if(FORM[0].id !== `dissapear`){
