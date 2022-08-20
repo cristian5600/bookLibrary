@@ -1,12 +1,18 @@
-
 const FORM = document.getElementsByClassName(`formWindow`);
 const CONTENT = document.getElementsByClassName(`container`);
 const form  = document.getElementById(`getBook`);
-const form2 = document.forms[`getBook`];
 const add = document.getElementsByClassName(`add`);
 const books = document.getElementsByClassName(`books`);
 let myLibrary = [];
-
+function Book(title,author,year,read) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.read = read;
+}
+Book.prototype.show = function(){
+    console.log(this);
+}
 add[0].addEventListener(`click`, ()=>{ // this opens the form
     toogleForm();
 })
@@ -23,7 +29,7 @@ form.onsubmit = function(e){
 }
 function addBookToPage(book){
     let newElement = document.createElement(`div`);
-    newElement.dataset.index = myLibrary.length;
+    newElement.dataset.index = myLibrary.length - 1;
     newElement.classList.add(`book`);
     books[0].appendChild(newElement);
 
@@ -40,15 +46,21 @@ function addBookToPage(book){
     newElement.appendChild(year);
     year.textContent = `Year: ` + book.year;
     
+    let rmv_btn = document.createElement(`button`);
+    rmv_btn.classList.add(`remove`)
+    newElement.appendChild(rmv_btn);
+    rmv_btn.textContent = `Remove`;
 
- 
+    rmv_btn.addEventListener(`click`, (e)=>{
+        console.log(e.path[1].getAttribute(`data-index`));
+        myLibrary.splice(e.path[1].getAttribute(`data-index`),1);
+        e.path[1].remove();
+    })
+}
+function fix_index(){
+    let mybooks = 2;
 }
 
-function Book(title,author,year) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-}
 function toogleForm(){
     if(FORM[0].id !== `dissapear`){
         FORM[0].setAttribute(`id`,`dissapear`);
